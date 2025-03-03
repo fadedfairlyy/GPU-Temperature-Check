@@ -1,0 +1,6 @@
+Another quick way to check GPU temperature is via wmic:
+wmic /namespace:\\root\wmi PATH MSAcpi_ThermalZoneTemperature get CurrentTemperature
+Limitations:
+
+WMIC often does not report GPU temperature directly.
+If this does not return results, use nvidia-smi or OpenHardwareMonitor instead.
