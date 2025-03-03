@@ -1,0 +1,8 @@
+Steps to Use OpenHardwareMonitor in PowerShell
+Download OpenHardwareMonitor from here.
+Extract the .zip file.
+Open OpenHardwareMonitor.exe (it will start running in the background).
+Use this PowerShell script to fetch the GPU temperature:
+$OHM = New-Object System.Net.WebClient
+$OHM.DownloadString("http://localhost:8085/data.json") | ConvertFrom-Json | Select-Object -ExpandProperty Children
+Ensure OpenHardwareMonitor is running before running the script.
